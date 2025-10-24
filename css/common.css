@@ -1,31 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/...) format('woff2');
+}
+
 :root {
     --cb-blue: #253F7A;
+    --action-yellow: rgb(245, 194, 41);
 }
 body {
     font-family: "Montserrat", Sans-serif;
     margin: 0;
     padding: 0;
     background-color: white;
+    height: 100vh;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile Header Start */
+#mobile_header_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+#mobile_header_title_container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    /* z-index: 1001; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#mobile_header_title_div,
+#nav_menu_toggle 
+{
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #mobile_header_title {
     font-size: 11px;
+    min-width: 50%;
+    border-bottom: 2.5px solid var(--cb-blue);
+    padding-bottom: 5px;
+}
+
+#mobile_header_logo,
+#mobile_header_logo img 
+{
+    /* height: 125px; */
+    /* min-width: 85px;
+    width: 75vw; */
+    width: 85px;
+}
+#mobile_header_logo {
+    padding: 10px 0;
+}
+
+#nav_menu_toggle svg {
+    width: 35px;
+    height: 35px;
+    /* position: absolute;
+    top: 23px;
+    right: 20px;
+    z-index: 1111; */
+    cursor: pointer;
+    fill: var(--cb-blue);
+}
+
+.nav-collapsed #nav_menu_toggle .menu-toggle-close {
+    display: none;
+}
+
+.nav-expanded #nav_menu_toggle .menu-toggle-open {
+    display: none;
+}
+
+#nav_menu_toggle:hover svg {
+    fill: #3970f1;
 }
 
 #header_nav {
-    position:absolute;
+    position: absolute;
     width: 100%;
     background-color: white;
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
+    z-index: 1000;
+    height: 100vh;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: height 0.3s ease;
 }
 
-#header_nav_list {
+#header_nav_list,
+#about_us_dropdown {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,25 +121,281 @@ a {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    max-height: 1000px;
+    overflow: scroll;
+    transition: height 0.3s ease;
+}
+
+#about_us_dropdown .mobile-top {
+    border-top: 1px solid #ddd;
+}
+
+.header-nav-item {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+#about_us_div {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 18px;
+    cursor: pointer;
+    justify-content: space-between;
+    height: 35px;
+}
+
+
+#about_us_item {
+    flex-direction: column;
+    align-items: unset;
+}
+
+/* .mobile-top {
+    border-top: 1px solid #ddd;
+} */
+
+.mobile-bottom {
+    border-bottom: none;
+}
+
+#header_nav_list #about_us_dropdown .header-nav-item > a {
+    padding-left: 40px;
 }
 
 #header_nav_list .header-nav-item {
+        min-height: 35px;
+        line-height: 35px;
+}
+
+#header_nav_list .header-nav-item > a {
     width: 100%;
     text-align: left;
-    padding: 5px 20px;
+    padding: 0px 20px;
     font-size: 18px;
 }
 
-#header_nav_list .header-nav-item.mobile-top {
-    padding: 5px 20px 10px 20px;
+.dropdown-triangle {
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+
+#header_nav_list .header-nav-item.mobile-top > a:hover,
+#header_nav_list .header-nav-item > a:hover,
+#about_us_div:hover {
+    background-color: var(--cb-blue);
+    color: white;
 }
 
 #header_top_logo_mobile img {
     height: 50px;
-    padding: 15px 20px 0 20px;
+    padding: 15px 20px 10px 20px;
 }
 
 .hidden {
     display: none;
 }
 
+#about_us_item.expanded .dropdown-triangle {
+    transform: rotate(-90deg);
+}
+
+#about_us_item.collapsed .dropdown-triangle {
+    transform: rotate(0deg);
+}
+
+.nav-collapsed #header_nav {
+    height: 0;
+    overflow: hidden;
+}
+.collapsed > ul,
+.nav-collapsed #header_nav > ul 
+{
+    height: 0;
+    overflow: hidden;
+}
+
+#header_action_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+
+}
+
+.header-button-div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-button {
+    background-color: #DFDFDF;
+    font-size: 10px;
+    font-weight: bold;
+    fill: var(--cb-blue);
+    color: var(--cb-blue);
+    border-radius: 8px 8px 8px 8px;
+    padding: 10px 10px 10px 10px;
+    min-width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: calc(46% - 20px);
+}
+
+.header-button.inverse,
+.header-button:hover
+{
+    background-color: var(--cb-blue);
+    color: white;
+    fill: white;
+}
+
+.header-button:hover,
+.header-button:active
+{
+    /* position: absolute; */
+    transform: scale(1.1);
+}
+
+.phone-icon-span {
+    display: flex;
+    align-items: center;
+}
+
+.phone-icon {
+    width: 1em;
+    height: 1em;
+}
+
+/* Mobile Header End */
+
+/* Main Section General Start */
+.main-section {
+    width: stretch;
+    padding: 80px 20px 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-section > h2 {
+    border-bottom: solid black;
+    font-size: 18px;
+    font-weight: 800;
+    width: min-content;
+}
+/* Main Section General End */
+
+/* Welcome Section Start */
+#welcome_section {
+    position: relative;
+    padding: unset;
+}
+
+#welcome-image-and-text {
+    background-color: rgba(37, 63, 122, 0.8); /* Semi-transparent background */
+    color: white;
+    font-weight: 900;
+    padding: 0px 20px;
+    width: stretch;
+    height: 320px;
+    background: url('../images/capoeira_brasil_group_welcome_image.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 28px;
+    letter-spacing: -1px;
+    text-shadow: 0px 0px 3px;
+}
+#take_this_journey_div {
+    background-color: var(--cb-blue);
+    color: white;
+    font-size: 13px;
+    line-height: 1.5em;
+    margin: auto 20px;
+    padding: 10px 15px;
+    border-radius: 0px 0px 10px 10px;
+    position: relative;
+}
+
+#journey_learn_more_div {
+    position: absolute;
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: center;
+    bottom: -15px;
+}
+
+#learn_more_button {
+    background-color: var(--action-yellow);
+    color: var(--cb-blue);
+    padding: 5px 20px;
+    border-radius: 8px 8px 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+/* Welcome Section End */
+
+/* Whatsapp Icon Start */
+#whatsapp_icon_div {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background-color: var(--cb-blue);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1002;
+}
+
+#whatsapp_icon_link svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+/* Whatsapp Icon End */
+
+* {
+    transition: all 0.3s ease;
+}
+
+
+
+/* Tablets and landscape phones */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Styles for tablets and landscape phones */
+}
+
+/* Tablets and small laptops */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles for tablets and small laptops */
+}
+
+/* Desktops and laptops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for desktops and laptops */
+}
+
+/* Large desktops and monitors */
+@media (min-width: 1200px) {
+  /* Styles for large desktops */
+}
