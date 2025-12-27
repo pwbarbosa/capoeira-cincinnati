@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     setMenuToggleEvListener();
     setAboutUsEvListener();
+    setInstructorBioEventListeners();
     setValPhilEventListeners()
 });
 
@@ -24,6 +25,18 @@ function setAboutUsEvListener() {
     });
 }
 
+function setInstructorBioEventListeners() {
+    const instructorCardElms = document.querySelectorAll('.instructor-card-div');
+
+    instructorCardElms.forEach((elm) => {
+        elm.addEventListener('click', () => {
+            elm.classList.toggle('collapsed');
+            elm.classList.toggle('expanded');
+        });
+    });
+}
+
+// valPhil stands for values and philosophy
 function setValPhilEventListeners() {
     const valPhilCollContentElms = document.querySelectorAll('.val-phil-collapsible-content-div');
 
