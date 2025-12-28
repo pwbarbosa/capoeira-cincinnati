@@ -436,14 +436,19 @@ a:not(.inline-link) {
     display: none;
 }
 
+.class-program-info-div > * {
+    margin: 10px 20px;
+}
+
 .class-program-div.expanded .class-program-info-div {
-    display: block;
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .class-program-info-div ul {
     text-align: left;
-    padding-right: 5px;
-    padding-left: 25px;
 }
 
 /* Classes & Programs Section End */
