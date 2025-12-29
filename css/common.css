@@ -664,6 +664,13 @@ a:not(.inline-link) {
     height: 250px;
 }
 
+.navigate-link {
+    color: white;
+    background-color: var(--cb-blue);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
 .val-phil-collapsible-content-div {
     width: 100%;
     height: fit-content
