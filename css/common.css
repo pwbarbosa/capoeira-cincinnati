@@ -629,15 +629,39 @@ a:not(.inline-link) {
     background-color: var(--action-yellow);
     color: var(--cb-blue);
 }
+/* Schedule End */
 
-/* Values Philosophy Section Start */
-#values_philosophy_div {
+/* Locations Section Start */
+.location-div {
+    margin: 10px 30px 20px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
-    margin: 0px 15px;
+    text-align: center;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.location-div > * {
+    margin: 10px 0;
+}
+
+.location-img {
+    max-width: 80vw;
+    border-radius: 10px;
+}
+
+.location-info-div > * {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.location-map {
+    border-radius: 10px;
+    width: 80vw;
+    height: 250px;
 }
 
 .val-phil-collapsible-content-div {
