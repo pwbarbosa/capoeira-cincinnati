@@ -549,6 +549,87 @@ a:not(.inline-link) {
 }
 /* Instructors End */
 
+/* Schedule Start */
+#training_schedule_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    width: calc(100% - 30px);
+    font-size: 0.75em;
+}
+
+#schedule_tables_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.schedule-table-header,
+.schedule-table-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.schedule-table-row {
+    background-color: #f2f2f2;
+}
+
+.schedule-table-row:nth-child(even) {        
+    background-color: #e2e2e2;
+}
+
+.schedule-table-header-cell {
+    flex: 1;
+    font-weight: bold;
+    background-color: var(--cb-blue);
+    color: white;
+    padding: 12px 15px;
+}
+
+.data-header-icon {
+    margin-right: 7.5px;
+}
+
+.schedule-table-cell {
+    flex: 1;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+#adult_youth_schedule_toggle_div {
+    margin-bottom: 10px;
+}
+
+.schedule-toggle-button {
+    background-color: var(--cb-blue);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: .95em;
+    font-weight: 700;
+}
+
+.schedule-toggle-button.active {
+    background-color: var(--action-yellow);
+    color: var(--cb-blue);
+    outline: var(--cb-blue) solid 2px;
+}
+
+.schedule-toggle-button:hover {
+    background-color: var(--action-yellow);
+    color: var(--cb-blue);
+}
+
 /* Values Philosophy Section Start */
 #values_philosophy_div {
     display: flex;

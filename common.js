@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setAboutUsEvListener();
     setClassProgramEventListeners();
     setInstructorBioEventListeners();
+    setClassScheduleEventListeners();
     setValPhilEventListeners()
 });
 
@@ -43,6 +44,32 @@ function setInstructorBioEventListeners() {
         elm.addEventListener('click', () => {
             elm.classList.toggle('collapsed');
             elm.classList.toggle('expanded');
+        });
+    });
+}
+
+function setClassScheduleEventListeners() {
+    const classScheduleToggleElms = document.querySelectorAll('.schedule-toggle-button');
+
+    classScheduleToggleElms.forEach((div) => {
+        div.addEventListener('click', () => {
+            const thisToggle = div;
+            if (!thisToggle.classList.contains('active')) {
+                thisToggle.classList.add('active');
+                const otherToggle = document.querySelector(`.schedule-toggle-button:not(#${thisToggle.id})`);
+                if (otherToggle) {
+                    otherToggle.classList.remove('active');
+                }
+                const scheduleType = thisToggle.getAttribute('data-schedule-type');
+                const relatedScheduleTable = document.querySelector(`.schedule-table[data-schedule-type="${scheduleType}"]`);
+                if (relatedScheduleTable) {
+                    relatedScheduleTable.classList.remove('hidden');
+                    const otherScheduleTable = document.querySelector(`.schedule-table:not([data-schedule-type="${scheduleType}"])`);
+                    if (otherScheduleTable) {
+                        otherScheduleTable.classList.add('hidden');
+                    }
+                }
+            }
         });
     });
 }

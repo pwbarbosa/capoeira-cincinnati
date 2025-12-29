@@ -204,7 +204,45 @@
         <section id="training_schedule_section" class="main-section">
             <h2>TRAINING&nbsp;SCHEDULE</h2>
             <div id="training_schedule_div">
-                <p>Coming soon!</p>
+                <div id="adult_youth_schedule_toggle_div">
+                    <button id="adult_schedule_toggle" class="schedule-toggle-button active" data-schedule-type="adult">ADULT CLASS</button>
+                    <button id="youth_schedule_toggle" class="schedule-toggle-button" data-schedule-type="youth">YOUTH CLASS</button>
+                </div>
+                <div id="schedule_tables_div">
+                    <div id="adult_schedule_table" class="schedule-table" data-schedule-type="adult">
+                        <div class="schedule-table-header">
+                            <div class="schedule-table-header-cell"><i class="fas fa-calendar-day data-header-icon"></i>Day</div>
+                            <div class="schedule-table-header-cell"><i class="fas fa-clock data-header-icon"></i>Time</div>
+                            <div class="schedule-table-header-cell"><i class="fas fa-map-marker-alt data-header-icon"></i>Location</div>
+                        </div>
+                        <div class="schedule-table-body">
+                            <div class="schedule-table-row">
+                                <div class="schedule-table-cell">Mondays</div>
+                                <div class="schedule-table-cell">6:30 - 8:00 PM</div>
+                                <div class="schedule-table-cell">Eastside Recreation Center<br>3950 Paxton Ave. Cincinnati, OH 45209</div>
+                            </div>
+                            <div class="schedule-table-row">
+                                <div class="schedule-table-cell">Thursdays</div>
+                                <div class="schedule-table-cell">6:30 - 8:00 PM</div>
+                                <div class="schedule-table-cell">Eastside Recreation Center<br>3950 Paxton Ave. Cincinnati, OH 45209</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="youth_schedule_table" class="schedule-table hidden" data-schedule-type="youth">
+                        <div class="schedule-table-header">
+                            <div class="schedule-table-header-cell">Day</div>
+                            <div class="schedule-table-header-cell">Time</div>
+                            <div class="schedule-table-header-cell">Location</div>
+                        </div>
+                        <div class="schedule-table-body">
+                            <div class="schedule-table-row">
+                                <div class="schedule-table-cell">Mondays</div>
+                                <div class="schedule-table-cell">5:30 - 6:30 PM</div>
+                                <div class="schedule-table-cell">Eastside Recreation Center<br>3950 Paxton Ave. Cincinnati, OH 45209</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="events_section" class="main-section">
