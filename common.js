@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    scrollIfUrlHashExists();
     setMenuToggleEvListener();
     setAboutUsEvListener();
     setClassProgramEventListeners();
@@ -6,6 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     setClassScheduleEventListeners();
     setValPhilEventListeners()
 });
+
+function scrollIfUrlHashExists() {
+    if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
 
 function setMenuToggleEvListener() {
     const menuToggle = document.getElementById('nav_menu_toggle');
