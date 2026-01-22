@@ -343,17 +343,35 @@ a:not(.inline-link) {
     color: white;
     font-weight: 900;
     padding: 0px 20px;
-    width: stretch;
+    width: 100vw;
     height: 320px;
-    background: url('../images/capoeira_brasil_group_welcome_image.png') no-repeat center center/cover;
+    /* background: url('../images/capoeira_brasil_group_welcome_image.png') no-repeat center center/cover; */
+    background: url('../images/CBOH_Cleveland_Batizado_2025.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     line-height: 28px;
     letter-spacing: -1px;
-    text-shadow: 0px 0px 3px;
+    
 }
+
+#welcome_text_div {
+    h1 {
+        max-width: 800px;
+        text-shadow: 0px 0px 20px black;
+        font-weight: 800;
+        font-size: 2.25em;
+        line-height: .9em;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: rgba(0,0,0,.2);
+    padding: 15px 0px;
+}
+
 #take_this_journey_div {
     background-color: var(--cb-blue);
     color: white;
@@ -873,8 +891,25 @@ footer h3 {
 /* Tablets and landscape phones */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
   /* Styles for tablets and landscape phones */
+    .header-button:hover,
+    .header-button:active
+    {
+        /* position: absolute; */
+        transform: scale(1.025);
+    }
+
     body:has(.nav-expanded) {
         overflow: unset;
+    }
+
+    #mobile_header_title_div {
+        justify-content: start;
+        padding-left: 20px;
+    }
+
+    #nav_menu_toggle {
+        justify-content: end;
+        padding-right: 20px;
     }
 
     .nav-collapsed #header_nav {
@@ -895,14 +930,116 @@ footer h3 {
 /* Tablets and small laptops */
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* Styles for tablets and small laptops */
+    .header-button:hover,
+    .header-button:active
+    {
+        /* position: absolute; */
+        transform: scale(1.025);
+    }
+
+    body:has(.nav-expanded) {
+        overflow: unset;
+    }
+
+    #mobile_header_title_div {
+        justify-content: start;
+        padding-left: 20px;
+    }
+
+    #nav_menu_toggle {
+        justify-content: end;
+        padding-right: 20px;
+    }
+
+    .nav-collapsed #header_nav {
+        overflow: hidden;
+        right: -300px;
+        height: auto;
+    }
+
+    #header_nav {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        right: 0;
+        transition: all 0.3s ease;
+    }
 }
 
 /* Desktops and laptops */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* Styles for desktops and laptops */
+  .header-button:hover,
+    .header-button:active
+    {
+        /* position: absolute; */
+        transform: scale(1.025);
+    }
+
+    body:has(.nav-expanded) {
+        overflow: unset;
+    }
+
+    #mobile_header_title_div {
+        justify-content: start;
+        padding-left: 20px;
+    }
+
+    #nav_menu_toggle {
+        justify-content: end;
+        padding-right: 20px;
+    }
+
+    .nav-collapsed #header_nav {
+        overflow: hidden;
+        right: -300px;
+        height: auto;
+    }
+
+    #header_nav {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        right: 0;
+        transition: all 0.3s ease;
+    }
 }
 
 /* Large desktops and monitors */
 @media (min-width: 1200px) {
   /* Styles for large desktops */
+  .header-button:hover,
+    .header-button:active
+    {
+        /* position: absolute; */
+        transform: scale(1.025);
+    }
+
+    body:has(.nav-expanded) {
+        overflow: unset;
+    }
+
+    #mobile_header_title_div {
+        justify-content: start;
+        padding-left: 20px;
+    }
+
+    #nav_menu_toggle {
+        justify-content: end;
+        padding-right: 20px;
+    }
+
+    .nav-collapsed #header_nav {
+        overflow: hidden;
+        right: -300px;
+        height: auto;
+    }
+
+    #header_nav {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        right: 0;
+        transition: all 0.3s ease;
+    }
 }
