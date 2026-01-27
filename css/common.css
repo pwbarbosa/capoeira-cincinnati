@@ -339,21 +339,26 @@ a:not(.inline-link) {
 }
 
 #welcome-image-and-text {
-    background-color: var(--cb-blue-semi-transparent);
+    img {
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+    }
+    /* background-color: var(--cb-blue-semi-transparent); */
     color: white;
     font-weight: 900;
     padding: 0px 20px;
     width: 100vw;
-    height: 320px;
+    /* height: 320px; */
     /* background: url('../images/capoeira_brasil_group_welcome_image.png') no-repeat center center/cover; */
-    background: url('../images/CBOH_Cleveland_Batizado_2025.jpg') no-repeat center center/cover;
+    /* background: url('../images/CBOH_Cleveland_Batizado_2025.jpg') no-repeat center center/cover; */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    line-height: 28px;
+    /* line-height: 28px; */
     letter-spacing: -1px;
-    
+    line-height: 0;
 }
 
 #welcome_text_div {
@@ -361,9 +366,14 @@ a:not(.inline-link) {
         max-width: 800px;
         text-shadow: 0px 0px 20px black;
         font-weight: 800;
-        font-size: 2.25em;
+        /* font-size: 2.25em; */
         line-height: .9em;
+        padding: 0 15px;
     }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
