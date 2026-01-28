@@ -341,7 +341,7 @@ a:not(.inline-link) {
 #welcome-image-and-text {
     img {
         height: auto;
-        max-height: 500px;
+        max-height: 400px;
         object-fit: cover;
     }
     /* background-color: var(--cb-blue-semi-transparent); */
@@ -369,6 +369,7 @@ a:not(.inline-link) {
         /* font-size: 2.25em; */
         line-height: .9em;
         padding: 0 15px;
+        margin: 5px 0;
     }
     position: absolute;
     top: 0;
@@ -936,6 +937,11 @@ footer h3 {
         right: 0;
         transition: all 0.3s ease;
     }
+    #welcome-image-and-text {
+        img {
+            width: 100vw;
+        }
+    }
 }
 
 /* Tablets and small laptops */
@@ -974,6 +980,11 @@ footer h3 {
         height: auto;
         right: 0;
         transition: all 0.3s ease;
+    }
+    #welcome-image-and-text {
+        img {
+            width: 100vw;
+        }
     }
 }
 
@@ -1014,6 +1025,12 @@ footer h3 {
         right: 0;
         transition: all 0.3s ease;
     }
+    #welcome-image-and-text {
+        img {
+            max-height: 350px;
+            width: 100vw;
+        }
+    }
 }
 
 /* Large desktops and monitors */
@@ -1052,5 +1069,11 @@ footer h3 {
         height: auto;
         right: 0;
         transition: all 0.3s ease;
+    }
+    #welcome-image-and-text {
+        img {
+            max-height: 350px;
+            width: 100vw;
+        }
     }
 }
