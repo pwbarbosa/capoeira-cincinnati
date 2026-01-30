@@ -13,7 +13,7 @@ function scrollIfUrlHashExists() {
         const targetElement = document.querySelector(window.location.hash);
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
-            window.scrollBy(0, -155);
+            // window.scrollBy(0, -155);
         }
     }
 }
