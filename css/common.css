@@ -325,6 +325,7 @@ a:not(.inline-link) {
     justify-content: center;
     align-items: center;
     text-align: center;
+    scroll-margin-top: 155px;
 }
 
 .main-section > h2 {
