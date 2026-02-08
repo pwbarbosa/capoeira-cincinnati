@@ -711,7 +711,7 @@ a:not(.inline-link) {
     font-weight: 400;
     font-size: .8em;
     padding-right: 5px;
-    color: var(--cb-gray);
+    color: var(--footer-text-color);
 }
 
 .location-info-div > * {
